@@ -1,0 +1,29 @@
+.custom_403 {
+  padding: 150px 10px 10px;
+}
+
+.custom_403_contentBox {
+  max-width: 350px;
+  padding: 20px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.custom_403_contentBox h2 {
+  color: var(--yellow);
+}
+
+.custom_403_contentBox p {
+  color: var(--yellow);
+  margin: 20px 0;
+}
+
+.custom_403_contentBox a {
+  color: var(--green);
+  text-decoration: none;
+  transition-duration: 0.2s;
+}
+
+.custom_403_contentBox a:hover {
+  color: var(--white);
+}

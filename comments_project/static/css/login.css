@@ -1,0 +1,108 @@
+.login {
+  padding: 150px 10px 10px;
+}
+
+.login_contentBox {
+  max-width: 350px;
+  padding: 20px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.login_contentBox h2 {
+  color: var(--blue);
+}
+
+.login_formBox {
+  margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.login_formBox div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+
+.login_formBox div label {
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.login_formBox div input {
+  display: inline-block;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--blue);
+}
+
+.errorlist li {
+  list-style: none;
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--yellow);
+}
+
+.login_formBtn {
+  display: inline-block;
+  width: 100%;
+  border: none;
+  outline: none;
+  color: var(--white);
+  background-color: var(--blue);
+  border-radius: 10px;
+  padding: 10px;
+  transition-duration: 0.2s;
+}
+
+.login_formBtn:hover {
+  cursor: pointer;
+  background-color: var(--white);
+  color: var(--blue);
+}
+
+.login_linkBox {
+  display: flex;
+  justify-content: space-between;
+}
+
+.login_linkBox a {
+  color: var(--white);
+  text-decoration: none;
+  transition-duration: 0.2s;
+}
+
+.login_linkBox a:first-child:hover {
+  color: var(--yellow);
+}
+
+.login_linkBox a:last-child:hover {
+  color: var(--green);
+}
+
+/* Responsive Media Queries */
+/* Tablet Version */
+@media (max-width: 767.5px) {
+  .login {
+    padding: 120px 10px 10px;
+  }
+
+  .login_contentBox h2 {
+    font-size: 24px;
+  }
+
+  .login_formBox {
+    margin: 20px 0;
+    gap: 20px;
+  }
+}

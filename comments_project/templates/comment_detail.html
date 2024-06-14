@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+<!--  -->
+{% load static %}
+
+<!--  -->
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/comment_detail.css' %}" />
+{% endblock style %}
+<!--  -->
+
+{% block content %}
+<!-- cdt - comment detail -->
+
+<div class="cdt">
+  <div class="cdt_contentBox glass">
+    <div class="cdt_infoBox glass">
+      <h2 class="size-nr weight-nr">
+        {{ comment.author.first_name }} {{ comment.author.last_name }}
+      </h2>
+
+      <a
+        class="size-sm weight-sm"
+        href="tel:{{ comment.author.phone_number }}"
+        title="Click To Call..."
+      >
+        {{ comment.author.phone_number }}
+      </a>
+
+      <a
+        class="size-sm weight-sm"
+        href="mailto:{{ comment.author.email }}"
+        title="Click To Send An E-Mail..."
+      >
+        {{ comment.author.email }}
+      </a>
+    </div>
+
+    <div class="cdt_imgBox">
+      {% if comment.author.photo %}
+      <img src="{{ comment.author.photo.url }}" alt="person" />
+      {% else %}
+      <img src="{% static 'image/anonymus_user.png' %}" alt="person" />
+      {% endif %}
+    </div>
+
+    <div class="cdt_textBox">
+      <h2 class="size-nr weight-nr">Comment # {{ comment.pk }}</h2>
+      <h5 class="size-sm weight-sm">{{ comment.date }}</h5>
+
+      <p class="size-sm weight-sm">{{ comment.comment }}</p>
+
+      <div class="cdt_btnBox">
+        <a
+          href="{% url 'comment_update' comment.pk %}"
+          class="size-sm weight-sm"
+        >
+          Update Comment
+        </a>
+        <a href="{% url 'comment_list' %}" class="size-sm weight-sm">
+          All Comments
+        </a>
+        <a
+          href="{% url 'comment_delete' comment.pk %}"
+          class="size-sm weight-sm"
+        >
+          Delete Comment
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

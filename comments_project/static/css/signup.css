@@ -1,0 +1,121 @@
+.signup {
+  padding: 150px 10px 10px;
+}
+
+.signup_contentBox {
+  max-width: 650px;
+  padding: 20px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.signup_contentBox h2 {
+  color: var(--yellow);
+}
+
+.signup_formBox {
+  margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.signup_formBox div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+
+.signup_formBox div label {
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.signup_formBox .helptext {
+  font-weight: 300;
+  font-size: 16px;
+  color: var(--gray);
+}
+
+.signup_formBox div input {
+  display: inline-block;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--yellow);
+  margin: 0 auto;
+}
+
+.signup_formBox .helptext ul li {
+  list-style: none;
+}
+
+.signup_formBox div label[for="id_photo"] {
+  color: var(--white);
+  background-color: var(--black);
+  border-radius: 10px;
+  padding: 10px;
+  transition-duration: 0.2s;
+}
+
+.signup_formBox div label[for="id_photo"]:hover {
+  background-color: var(--white);
+  color: var(--black);
+  cursor: pointer;
+}
+
+.signup_formBox div input#id_photo {
+  display: none;
+}
+
+.signup_formBtn {
+  display: inline-block;
+  width: 100%;
+  border: none;
+  outline: none;
+  color: var(--white);
+  background-color: var(--yellow);
+  border-radius: 10px;
+  padding: 10px;
+  transition-duration: 0.2s;
+}
+
+.signup_formBtn:hover {
+  cursor: pointer;
+  background-color: var(--white);
+  color: var(--yellow);
+}
+
+.signup_contentBox a {
+  color: var(--white);
+  text-decoration: none;
+  transition-duration: 0.2s;
+}
+
+.signup_contentBox a:hover {
+  color: var(--green);
+}
+
+/* Responsive Media Queries */
+/* Tablet Version */
+@media (max-width: 767.5px) {
+  .signup {
+    padding: 120px 10px 10px;
+  }
+
+  .signup_contentBox h2 {
+    font-size: 24px;
+  }
+
+  .signup_formBox {
+    margin: 20px 0;
+    gap: 20px;
+  }
+}

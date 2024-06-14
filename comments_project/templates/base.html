@@ -1,0 +1,81 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comments Project</title>
+    <link
+      rel="shortcut icon"
+      href="{% static 'image/x-icon.png' %}"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    {% block style %}{% endblock style %}
+  </head>
+
+  <body>
+    <header class="header glass">
+      <a href="{% url 'homepage' %}" class="header_logo">
+        <img src="{% static 'image/x-icon.png' %}" alt="x-icon" />
+        <span class="size-nr weight-lg">Comments Project</span>
+      </a>
+
+      <ul class="header_menu">
+        <i
+          class="fa-solid fa-xmark header_xmark size-nr"
+          onclick="header_menuActive();"
+        ></i>
+
+        <li>
+          <a href="{% url 'comment_list' %}">All Comments</a>
+        </li>
+
+        {% if user.is_authenticated %}
+        <li>
+          <a href="{% url 'comment_create' %}">Add Comment</a>
+        </li>
+
+        <li>
+          <a href="{% url 'password_change' %}">Password Change</a>
+        </li>
+
+        <li>
+          <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <a href="" onclick="this.parentNode.submit(); return false;">
+              Logout
+            </a>
+          </form>
+        </li>
+        {% else %}
+        <li>
+          <a href="{% url 'login' %}">Login</a>
+        </li>
+
+        <li>
+          <a href="{% url 'signup' %}">Sign Up</a>
+        </li>
+        {% endif %}
+      </ul>
+
+      <i
+        class="fa-solid fa-bars header_bars size-nr"
+        onclick="header_menuActive();"
+      ></i>
+    </header>
+
+    {% block content %}{% endblock content %}
+
+    <script src="{% static 'js/base.js' %}"></script>
+    {% block script %}{% endblock script %}
+  </body>
+</html>

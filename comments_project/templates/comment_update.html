@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+<!--  -->
+{% load static %}
+
+<!--  -->
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/comment_update.css' %}" />
+{% endblock style %}
+<!--  -->
+
+{% block content %}
+<!-- cu - comment update -->
+
+<div class="cu">
+  <div class="cu_contentBox glass">
+    <h2 class="size-nr weight-nr">Update Comment</h2>
+
+    <form action="" method="post" class="cu_formBox">
+      {% csrf_token %}
+      <!--  -->
+      {{ form }}
+
+      <div class="cu_btnBox">
+        <input type="submit" value="Update" class="size-sm weight-sm" />
+
+        <a
+          href="{% url 'comment_detail' comment.pk %}"
+          class="size-sm weight-sm"
+        >
+          Cancel
+        </a>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock content %}

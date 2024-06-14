@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+<!--  -->
+{% load static %}
+
+<!--  -->
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}" />
+{% endblock style %}
+<!--  -->
+
+{% block content %}
+<section class="home">
+  <div class="home_contentBox glass">
+    {% if user.is_authenticated %}
+    <p class="size-sm weight-sm">
+      Welcome, <span>{{ user.first_name }} {{ user.last_name }}</span>!
+    </p>
+    {% else %}
+    <p class="size-sm weight-sm">You are not logged in!</p>
+    {% endif %}
+
+    <h2 class="size-nr weight-nr">
+      You can read other people's opinions on this website.
+    </h2>
+    <p class="size-sm weight-sm">Connect with us on social networks:</p>
+
+    <div class="home_iconBox">
+      <a href="https://t.me/mohirdev" target="_blank" class="size-lg">
+        <i class="fa-brands fa-telegram"></i>
+      </a>
+
+      <a href="https://mohirdev.uz/" target="_blank" class="size-lg">
+        <i class="fa-solid fa-globe"></i>
+      </a>
+
+      <a
+        href="https://www.youtube.com/@Mohirdev"
+        target="_blank"
+        class="size-lg"
+      >
+        <i class="fa-brands fa-youtube"></i>
+      </a>
+    </div>
+  </div>
+</section>
+{% endblock content %}

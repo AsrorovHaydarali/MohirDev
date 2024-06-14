@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+<!--  -->
+{% load static %}
+
+<!--  -->
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/comment_list.css' %}" />
+{% endblock style %}
+<!--  -->
+
+{% block content %}
+<!-- cl - comment_list -->
+
+<section class="cl">
+  <div class="cl_contentBox glass">
+    <table class="cl_table">
+      <thead class="cl_thead">
+        <tr>
+          <th class="size-nr weight-nr">ID</th>
+          <th class="size-nr weight-nr">Photo</th>
+          <th class="size-nr weight-nr">First Name</th>
+          <th class="size-nr weight-nr">Last Name</th>
+          <th class="size-nr weight-nr">Phone Number</th>
+          <th class="size-nr weight-nr">E-Mail</th>
+          <th class="size-nr weight-nr">Comment Text</th>
+          <th class="size-nr weight-nr">Comment Date</th>
+        </tr>
+      </thead>
+
+      <tbody class="cl_tbody">
+        {% for comment in comment_list %}
+        <tr>
+          <td class="size-sm weight-sm">{{ comment.pk }}</td>
+
+          <td class="cl_td">
+            {% if comment.author.photo %}
+            <img src="{{ comment.author.photo.url }}" alt="person" />
+            {% else %}
+            <img src="{% static 'image/anonymus_user.png' %}" alt="person" />
+            {% endif %}
+          </td>
+
+          <td class="size-sm weight-sm">{{ comment.author.first_name }}</td>
+          <td class="size-sm weight-sm">{{ comment.author.last_name }}</td>
+
+          <td class="size-sm weight-sm cl_tel">
+            <a
+              href="tel:{{ comment.author.phone_number }}"
+              title="Click To Call..."
+            >
+              {{ comment.author.phone_number }}
+            </a>
+          </td>
+
+          <td class="size-sm weight-sm">
+            <a
+              href="mailto:{{ comment.author.email }}"
+              title="Click To Send An E-Mail..."
+            >
+              {{ comment.author.email }}
+            </a>
+          </td>
+
+          <td class="size-sm weight-sm cl_comment">
+            <a
+              href="{% url 'comment_detail' comment.pk %}"
+              title="Click To See More..."
+            >
+              {{ comment.comment | truncatewords:"7"}}
+            </a>
+          </td>
+
+          <td class="size-sm weight-sm">{{ comment.date }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endblock content %}

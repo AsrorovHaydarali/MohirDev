@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+<!--  -->
+{% load static %}
+
+<!--  -->
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/comment_create.css' %}" />
+{% endblock style %}
+<!--  -->
+
+{% block content %}
+<!-- cc - comment create -->
+
+<div class="cc">
+  <div class="cc_contentBox glass">
+    <h2 class="size-nr weight-nr">Add Comment</h2>
+
+    <form action="" method="post" class="cc_formBox">
+      {% csrf_token %}
+      <!--  -->
+      {{ form }}
+
+      <div class="cc_btnBox">
+        <input type="submit" value="Send" class="size-sm weight-sm" />
+
+        <a href="{% url 'homepage' %}" class="size-sm weight-sm">Cancel</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock content %}

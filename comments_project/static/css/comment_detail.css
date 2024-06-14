@@ -1,0 +1,137 @@
+.cdt {
+  padding: 150px 10px 10px;
+}
+
+.cdt_contentBox {
+  max-width: 800px;
+  min-height: 240px;
+  padding: 20px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.cdt_infoBox {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  margin: 0 10px 10px 0;
+  border-radius: 50%;
+  shape-outside: circle();
+  float: left;
+  text-align: center;
+  overflow: hidden;
+}
+
+.cdt_infoBox h2 {
+  color: var(--white);
+  margin-bottom: 5px;
+  text-wrap: balance;
+}
+
+.cdt_infoBox a {
+  text-decoration: none;
+  transition-duration: 0.2s;
+  color: var(--gray);
+}
+
+.cdt_infoBox a:nth-last-child(1):hover {
+  color: var(--green);
+}
+
+.cdt_infoBox a:nth-last-child(2):hover {
+  color: var(--blue);
+}
+
+.cdt_imgBox {
+  position: relative;
+  float: right;
+  width: 150px;
+  height: 150px;
+  margin: 0 0 10px 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+  shape-outside: circle();
+}
+
+.cdt_imgBox img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.cdt_textBox h2 {
+  text-align: center;
+  color: var(--white);
+}
+
+.cdt_textBox h5 {
+  text-align: center;
+  color: var(--gray);
+  margin: 10px 0;
+}
+
+.cdt_textBox p {
+  color: var(--white);
+  text-align: justify;
+  text-align-last: center;
+}
+
+.cdt_btnBox {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+}
+
+.cdt_btnBox a {
+  text-decoration: none;
+  transition-duration: 0.2s;
+}
+
+.cdt_btnBox a:nth-child(1) {
+  color: var(--green);
+}
+
+.cdt_btnBox a:nth-child(2) {
+  color: var(--blue);
+}
+
+.cdt_btnBox a:nth-child(3) {
+  color: var(--red);
+}
+
+.cdt_btnBox a:nth-child(1):hover,
+.cdt_btnBox a:nth-child(2):hover,
+.cdt_btnBox a:nth-child(3):hover {
+  color: var(--white);
+}
+
+/* Responsive Media Queries */
+/* Tablet Version */
+@media (max-width: 767.5px) {
+  .cdt {
+    padding: 120px 10px 10px;
+  }
+
+  .cdt_contentBox {
+    padding: 10px;
+  }
+
+  .cdt_imgBox {
+    width: 70px;
+    height: 70px;
+  }
+
+  .cdt_textBox h2 {
+    font-size: 16px;
+  }
+}

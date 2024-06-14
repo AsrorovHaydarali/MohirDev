@@ -1,0 +1,106 @@
+.cu {
+  padding: 150px 10px 10px;
+}
+
+.cu_contentBox {
+  max-width: 350px;
+  padding: 20px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cu_contentBox h2 {
+  color: var(--yellow);
+}
+
+.cu_formBox {
+  margin: 20px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.cu_formBox div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+
+.cu_formBox div label {
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.cu_formBox div textarea {
+  display: inline-block;
+  width: 100%;
+  height: 200px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--yellow);
+  resize: none;
+}
+
+.cu_formBox div textarea::-webkit-scrollbar {
+  display: none;
+}
+
+.errorlist li {
+  list-style: none;
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--yellow);
+}
+
+.cu_formBox div.cu_btnBox {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.cu_btnBox input {
+  display: inline-block;
+  border: none;
+  outline: none;
+  color: var(--white);
+  background-color: var(--green);
+  border-radius: 10px;
+  padding: 10px 20px;
+  transition-duration: 0.2s;
+}
+
+.cu_btnBox input:hover {
+  cursor: pointer;
+  background-color: var(--white);
+  color: var(--green);
+}
+
+.cu_btnBox a {
+  display: inline-block;
+  color: var(--white);
+  background-color: var(--red);
+  border-radius: 10px;
+  padding: 10px 20px;
+  text-decoration: none;
+  transition-duration: 0.2s;
+}
+
+.cu_btnBox a:hover {
+  cursor: pointer;
+  background-color: var(--white);
+  color: var(--red);
+}
+
+/* Responsive Media Queries */
+/* Tablet Version */
+@media (max-width: 767.5px) {
+  .cu {
+    padding: 120px 10px 10px;
+  }
+}

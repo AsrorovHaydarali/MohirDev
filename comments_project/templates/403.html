@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+<!--  -->
+{% load static %}
+
+<!--  -->
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/403.css' %}" />
+{% endblock style %}
+<!--  -->
+
+{% block content %}
+<section class="custom_403">
+  <div class="custom_403_contentBox glass">
+    <h2 class="size-lg weight-lg">403</h2>
+    <p class="size-nr weight-nr">
+      Sorry, you don't have permission to access this page.
+    </p>
+
+    <a class="size-sm weight-sm" href="{% url 'homepage' %}">
+      Go back to the homepage
+    </a>
+  </div>
+</section>
+{% endblock content %}

@@ -1,0 +1,106 @@
+.cc {
+  padding: 150px 10px 10px;
+}
+
+.cc_contentBox {
+  max-width: 350px;
+  padding: 20px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cc_contentBox h2 {
+  color: var(--blue);
+}
+
+.cc_formBox {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.cc_formBox div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+
+.cc_formBox div label {
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.cc_formBox div textarea {
+  display: inline-block;
+  width: 100%;
+  height: 200px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--blue);
+  resize: none;
+}
+
+.cc_formBox div textarea::-webkit-scrollbar {
+  display: none;
+}
+
+.errorlist li {
+  list-style: none;
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--yellow);
+}
+
+.cc_formBox div.cc_btnBox {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.cc_btnBox input {
+  display: inline-block;
+  border: none;
+  outline: none;
+  color: var(--white);
+  background-color: var(--green);
+  border-radius: 10px;
+  padding: 10px 20px;
+  transition-duration: 0.2s;
+}
+
+.cc_btnBox input:hover {
+  cursor: pointer;
+  background-color: var(--white);
+  color: var(--green);
+}
+
+.cc_btnBox a {
+  display: inline-block;
+  color: var(--white);
+  background-color: var(--red);
+  border-radius: 10px;
+  padding: 10px 20px;
+  text-decoration: none;
+  transition-duration: 0.2s;
+}
+
+.cc_btnBox a:hover {
+  cursor: pointer;
+  background-color: var(--white);
+  color: var(--red);
+}
+
+/* Responsive Media Queries */
+/* Tablet Version */
+@media (max-width: 767.5px) {
+  .cc {
+    padding: 120px 10px 10px;
+  }
+}
